@@ -63,9 +63,6 @@ function flood_fill(x, y) {
         stos.push([px, py - 1]);
         stos.push([px, py + 1]);
         stos.push([px - 1, py]);
-        stos.push([px + 1, py]);
-        
-        
-        
+        stos.push([px + 1, py]);  
     }
 }
