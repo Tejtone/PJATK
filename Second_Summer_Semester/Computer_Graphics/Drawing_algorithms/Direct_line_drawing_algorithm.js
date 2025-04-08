@@ -54,6 +54,5 @@ function draw_line() {
   for (x = x0; x <= x1; x++) {
     y = a * x + b;
     set_pixel(x, Math.round(y), 0);
-}
-  
+    }
 }
