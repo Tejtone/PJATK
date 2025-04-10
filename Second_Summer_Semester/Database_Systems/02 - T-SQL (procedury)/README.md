@@ -1,4 +1,5 @@
 Zadania przykładowe
+
 1|
 Utwórz procedurę, która znajdzie liczbę pracowników dla każdego działu. Jeśli liczba ta będzie niższa
 od podanej, wyświetl następujący komunikat: "Dział numer X ma Y pracowników". Na końcu procedury
@@ -45,6 +46,7 @@ tym pracownikom (w ramach podanego działu), którzy zarabiają poniżej średni
 być równa 5% ich miesięcznego wynagrodzenia.
 
 Zadania dodatkowe
+
 1|
 Utwórz procedurę, która oblicza i przydziela roczną premię dla pracowników na podstawie ich
 wynagrodzenia, stanowiska i wydajności działu.
