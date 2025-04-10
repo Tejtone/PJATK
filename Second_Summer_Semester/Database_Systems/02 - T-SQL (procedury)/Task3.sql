@@ -9,7 +9,6 @@ BEGIN
     IF EXISTS (SELECT 1 FROM DEPT WHERE dname = @dname OR loc = @loc)
     BEGIN
         THROW 51000, 'Podana nazwa lub lokalizacja istnieje', 1;
-        RETURN;
     END;
 
     SELECT @newDeptno = MAX(deptno) + 10 FROM DEPT;
