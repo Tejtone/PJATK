@@ -1,9 +1,10 @@
 CREATE PROCEDURE Task1
     @number INT
 AS
+    
 BEGIN
 
-        DECLARE @mssgCOUNT INT = 0, @deptCount INT;
+        DECLARE @mssgCount INT = 0, @deptCount INT;
 
         SELECT @deptCount = COUNT(*)
         FROM dept;
@@ -21,7 +22,7 @@ BEGIN
             BEGIN
 
                 PRINT 'Dział numer ' + CONVERT(VARCHAR, @deptno) + ' ma ' + CONVERT(VARCHAR, @count) + ' liczbę pracowników ';
-                SET @mssgCOUNT = @mssgCOUNT + 1;
+                SET @mssgCount = @mssgCount + 1;
 
             END;
 
@@ -31,9 +32,9 @@ BEGIN
         CLOSE curl;
         DEALLOCATE curl;
 
-        PRINT 'komunikaty = ' + CONVERT(VARCHAR, @mssgCOUNT);
+        PRINT 'komunikaty = ' + CONVERT(VARCHAR, @mssgCount);
 
-        IF @mssgCOUNT < @deptCount
+        IF @mssgCount < @deptCount
         BEGIN
 
             UPDATE emp
@@ -43,5 +44,3 @@ BEGIN
         END;
 
 END;
-
-EXEC Task1 @number = 4;
