@@ -7,6 +7,7 @@ wyświetl informację o liczbie wyświetlonych komunikatów, a jeśli liczba jes
 wszystkich działów, daj podwyżkę osobie o nazwie "KING".
 
 Zadania indywidualne
+
 1|
 Napisz prosty program w języku Transact-SQL. Zadeklaruj zmienną, przypisz do niej liczbę rekordów
 w tabeli Emp i wydrukuj wynik za pomocą instrukcji PRINT - na przykład "Jest 10 pracowników”.
