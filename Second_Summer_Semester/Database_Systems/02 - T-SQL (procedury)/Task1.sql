@@ -44,3 +44,8 @@ BEGIN
         END;
 
 END;
+
+
+
+
+EXEC Task1 @number = 4;
