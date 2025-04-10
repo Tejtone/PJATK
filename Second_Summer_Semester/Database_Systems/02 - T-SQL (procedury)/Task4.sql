@@ -17,7 +17,7 @@ BEGIN
 
         PRINT @ename + ' miał pensję poniżej 1000 – nowa pensja: ' +
               CONVERT(VARCHAR, @sal * 1.1);
-    END
+    END;
     ELSE IF @sal > 1500
     BEGIN
         UPDATE EMP
@@ -26,10 +26,10 @@ BEGIN
 
         PRINT @ename + ' miał pensję powyżej 1500 – nowa pensja: ' +
               CONVERT(VARCHAR, @sal * 0.9);
-    END
+    END;
 
     FETCH NEXT FROM all_ename INTO @empno, @ename, @sal;
-END
+END;
 
 CLOSE all_ename;
 DEALLOCATE all_ename;
