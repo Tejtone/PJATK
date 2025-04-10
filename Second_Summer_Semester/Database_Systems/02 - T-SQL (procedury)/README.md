@@ -9,19 +9,23 @@ Zadania indywidualne
 1|
 Napisz prosty program w języku Transact-SQL. Zadeklaruj zmienną, przypisz do niej liczbę rekordów
 w tabeli Emp i wydrukuj wynik za pomocą instrukcji PRINT - na przykład "Jest 10 pracowników”.
+
 2|
 Utwórz procedurę do wstawiania nowych działów. Procedura będzie przyjmowała jako parametry
 nazwy i lokalizacji. Numer działu zostanie wygenerowany automatycznie i zwrócony w parametrze
 wyjściowym. Procedura powinna sprawdzić, czy dział o podanej nazwie lub lokalizacji już istnieje. Jeśli
 tak, nie wstawi nowego rekordu i zgłosi błąd.
+
 3|
 Użyj kursora, aby przejrzeć wszystkich pracowników i zmodyfikować ich wynagrodzenia:
 ● Pracownicy, którzy zarabiają mniej niż 1000, otrzymują 10% podwyżkę wynagrodzenia.
 ● Pracownicy, którzy zarabiają więcej niż 1500, mają obniżone wynagrodzenie o 10%.
 ● Wyświetlanie informacji o każdej zmianie wprowadzonej w danych wyjściowych.
+
 4|
 Przekształć kod z poprzedniego zadania w procedurę, aby wartości zarobków (1000 i 1500) były
 dostarczane jako parametry wejściowe procedury.
+
 5|
 Utwórz procedurę umożliwiającą wstawianie nowych pracowników do tabeli EMP. W parametrach
 podaj:
@@ -34,6 +38,7 @@ Znajdź wartości dla pozostałych kolumn:
 ● Sal - oblicz wynagrodzenie równe płacy minimalnej w danym dziale
 ● Empno - bieżące maksymalne empno + 1
 ● Deptno - identyfikator działu o nazwie podanej w parametrze
+
 6|
 W procedurze znajdź średnią pensję w dziale określonym przez parametr. Przydziel prowizję (comm)
 tym pracownikom (w ramach podanego działu), którzy zarabiają poniżej średniej. Prowizja powinna
