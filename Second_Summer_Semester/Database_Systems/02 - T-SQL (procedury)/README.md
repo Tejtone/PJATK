@@ -1,34 +1,30 @@
-Zadania przykładowe
-
-1|
+1.
 Utwórz procedurę, która znajdzie liczbę pracowników dla każdego działu. Jeśli liczba ta będzie niższa
 od podanej, wyświetl następujący komunikat: "Dział numer X ma Y pracowników". Na końcu procedury
 wyświetl informację o liczbie wyświetlonych komunikatów, a jeśli liczba jest niższa niż liczba
 wszystkich działów, daj podwyżkę osobie o nazwie "KING".
 
-Zadania indywidualne
-
-1|
+2.
 Napisz prosty program w języku Transact-SQL. Zadeklaruj zmienną, przypisz do niej liczbę rekordów
 w tabeli Emp i wydrukuj wynik za pomocą instrukcji PRINT - na przykład "Jest 10 pracowników”.
 
-2|
+3.
 Utwórz procedurę do wstawiania nowych działów. Procedura będzie przyjmowała jako parametry
 nazwy i lokalizacji. Numer działu zostanie wygenerowany automatycznie i zwrócony w parametrze
 wyjściowym. Procedura powinna sprawdzić, czy dział o podanej nazwie lub lokalizacji już istnieje. Jeśli
 tak, nie wstawi nowego rekordu i zgłosi błąd.
 
-3|
+4.
 Użyj kursora, aby przejrzeć wszystkich pracowników i zmodyfikować ich wynagrodzenia:
 ● Pracownicy, którzy zarabiają mniej niż 1000, otrzymują 10% podwyżkę wynagrodzenia.
 ● Pracownicy, którzy zarabiają więcej niż 1500, mają obniżone wynagrodzenie o 10%.
 ● Wyświetlanie informacji o każdej zmianie wprowadzonej w danych wyjściowych.
 
-4|
+5.
 Przekształć kod z poprzedniego zadania w procedurę, aby wartości zarobków (1000 i 1500) były
 dostarczane jako parametry wejściowe procedury.
 
-5|
+6.
 Utwórz procedurę umożliwiającą wstawianie nowych pracowników do tabeli EMP. W parametrach
 podaj:
 ● nazwa działu
@@ -41,14 +37,12 @@ Znajdź wartości dla pozostałych kolumn:
 ● Empno - bieżące maksymalne empno + 1
 ● Deptno - identyfikator działu o nazwie podanej w parametrze
 
-6|
+7.
 W procedurze znajdź średnią pensję w dziale określonym przez parametr. Przydziel prowizję (comm)
 tym pracownikom (w ramach podanego działu), którzy zarabiają poniżej średniej. Prowizja powinna
 być równa 5% ich miesięcznego wynagrodzenia.
 
-Zadania dodatkowe
-
-1|
+8.
 Utwórz procedurę, która oblicza i przydziela roczną premię dla pracowników na podstawie ich
 wynagrodzenia, stanowiska i wydajności działu.
 1. Procent premii powinien zostać określony w następujący sposób:
