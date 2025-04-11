@@ -1,3 +1,18 @@
+-- Utwórz procedurę, która oblicza i przydziela roczną premię dla pracowników na podstawie ich 
+-- wynagrodzenia, stanowiska i wydajności działu. 
+-- 1. 
+-- Procent premii powinien zostać określony w następujący sposób: 
+-- ○ Kierownicy (MANAGER) otrzymują 15% swojego wynagrodzenia jako premię. 
+-- ○ Analitycy (ANALYST)  otrzymują 12% swojego wynagrodzenia. 
+-- ○ Sprzedawcy (SALESMAN) otrzymują 10% swojego wynagrodzenia plus 5% prowizji (jeśli 
+-- dotyczy). 
+-- ○ Urzędnicy (CLERK) i inne stanowiska otrzymują 8% swojego wynagrodzenia. 
+-- 2. Działy o wysokich wynikach (średnie wynagrodzenie > 3000) powinny otrzymać 5% dodatkowej 
+-- premii. 
+-- 3. Bonus powinien zostać zapisany w nowej tabeli o nazwie BONUS_HISTORY. 
+-- 4. Procedura powinna obejmować obsługę błędów w przypadku, gdy pracownik nie istnieje lub nie ma 
+-- ważnego wynagrodzenia. 
+
 CREATE PROCEDURE Task8
     @empno INT
 AS
