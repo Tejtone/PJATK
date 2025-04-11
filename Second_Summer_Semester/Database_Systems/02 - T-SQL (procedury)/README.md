@@ -1,68 +1,100 @@
-1.
-Utwórz procedurę, która znajdzie liczbę pracowników dla każdego działu. Jeśli liczba ta będzie niższa
-od podanej, wyświetl następujący komunikat: "Dział numer X ma Y pracowników". Na końcu procedury
-wyświetl informację o liczbie wyświetlonych komunikatów, a jeśli liczba jest niższa niż liczba
-wszystkich działów, daj podwyżkę osobie o nazwie "KING".
+-- Table: Dept
+CREATE TABLE DEPT (
+    deptno int  NOT NULL,
+    dname varchar(20)  NOT NULL,
+    loc varchar(20)  NOT NULL
+);
 
-2.
-Napisz prosty program w języku Transact-SQL. Zadeklaruj zmienną, przypisz do niej liczbę rekordów
-w tabeli Emp i wydrukuj wynik za pomocą instrukcji PRINT - na przykład "Jest 10 pracowników”.
+-- Table: Emp
+CREATE TABLE EMP (
+    empno int  NOT NULL,
+    ename varchar(20)  NOT NULL,
+    job varchar(20)  NOT NULL,
+    mgr int  NULL,
+    hiredate date  NOT NULL,
+    sal int  NOT NULL,
+    comm int  NULL,
+    deptno int  NULL
+);
 
-3.
-Utwórz procedurę do wstawiania nowych działów. Procedura będzie przyjmowała jako parametry
-nazwy i lokalizacji. Numer działu zostanie wygenerowany automatycznie i zwrócony w parametrze
-wyjściowym. Procedura powinna sprawdzić, czy dział o podanej nazwie lub lokalizacji już istnieje. Jeśli
-tak, nie wstawi nowego rekordu i zgłosi błąd.
+-- Table: Emp_Proj
+CREATE TABLE EMP_PROJ (
+    empno int  NOT NULL,
+    projno int  NOT NULL
+);
 
-4.
-Użyj kursora, aby przejrzeć wszystkich pracowników i zmodyfikować ich wynagrodzenia:
-● Pracownicy, którzy zarabiają mniej niż 1000, otrzymują 10% podwyżkę wynagrodzenia.
-● Pracownicy, którzy zarabiają więcej niż 1500, mają obniżone wynagrodzenie o 10%.
-● Wyświetlanie informacji o każdej zmianie wprowadzonej w danych wyjściowych.
+-- Table: Proj
+CREATE TABLE PROJ (
+    projno int  NOT NULL,
+    pname varchar(20)  NOT NULL,
+    startdate date  NOT NULL,
+    enddate date  NULL
+);
 
-5.
-Przekształć kod z poprzedniego zadania w procedurę, aby wartości zarobków (1000 i 1500) były
-dostarczane jako parametry wejściowe procedury.
+-- Table: Salgrade
+CREATE TABLE SALGRADE (
+    grade int  NOT NULL,
+    losal int  NOT NULL,
+    hisal int  NOT NULL
+);
 
-6.
-Utwórz procedurę umożliwiającą wstawianie nowych pracowników do tabeli EMP. W parametrach
-podaj:
-● nazwa działu
-● nazwisko pracownika
-Przed wprowadzeniem nowego rekordu procedura powinna sprawdzić, czy istnieje dokładnie jeden
-dział o podanej nazwie (jeśli nie, należy zgłosić błąd).
-Znajdź wartości dla pozostałych kolumn:
-● Job - znajdź nazwę stanowiska z największą liczbą pracowników.
-● Sal - oblicz wynagrodzenie równe płacy minimalnej w danym dziale
-● Empno - bieżące maksymalne empno + 1
-● Deptno - identyfikator działu o nazwie podanej w parametrze
 
-7.
-W procedurze znajdź średnią pensję w dziale określonym przez parametr. Przydziel prowizję (comm)
-tym pracownikom (w ramach podanego działu), którzy zarabiają poniżej średniej. Prowizja powinna
-być równa 5% ich miesięcznego wynagrodzenia.
+-- Insert data into EMP table
+INSERT INTO EMP (empno, ename, job, mgr, hiredate, sal, comm, deptno) VALUES
+(7369, 'SMITH',  'CLERK',     7902, CAST('1980-12-17' AS DATE),  800, NULL, 20);
+INSERT INTO EMP VALUES
+(7499, 'ALLEN',  'SALESMAN',  7698, CAST('1981-02-20' AS DATE), 1600,  300, 30);
+INSERT INTO EMP VALUES
+(7521, 'WARD',   'SALESMAN',  7698, CAST('1981-02-22' AS DATE), 1250,  500, 30);
+INSERT INTO EMP VALUES
+(7566, 'JONES',  'MANAGER',   7839, CAST('1981-04-02' AS DATE),  2975, NULL, 20);
+INSERT INTO EMP VALUES
+(7654, 'MARTIN', 'SALESMAN',  7698, CAST('1981-09-28' AS DATE), 1250, 1400, 30);
+INSERT INTO EMP VALUES
+(7698, 'BLAKE',  'MANAGER',   7839, CAST('1981-05-01' AS DATE),  2850, NULL, 30);
+INSERT INTO EMP VALUES
+(7782, 'CLARK',  'MANAGER',   7839, CAST('1981-06-09' AS DATE),  2450, NULL, 10);
+INSERT INTO EMP VALUES
+(7788, 'SCOTT',  'ANALYST',   7566, CAST('1982-12-09' AS DATE), 3000, NULL, 20);
+INSERT INTO EMP VALUES
+(7839, 'KING',   'PRESIDENT', NULL, CAST('1981-11-17' AS DATE), 5000, NULL, 10);
+INSERT INTO EMP VALUES
+(7844, 'TURNER', 'SALESMAN',  7698, CAST('1981-09-08' AS DATE),  1500,    0, 30);
+INSERT INTO EMP VALUES
+(7876, 'ADAMS',  'CLERK',     7788, CAST('1983-01-12' AS DATE), 1100, NULL, 20);
+INSERT INTO EMP VALUES
+(7900, 'JAMES',  'CLERK',     7698, CAST('1981-12-03' AS DATE),   950, NULL, 30);
+INSERT INTO EMP VALUES
+(7902, 'FORD',   'ANALYST',   7566, CAST('1981-12-03' AS DATE),  3000, NULL, 20);
+INSERT INTO EMP VALUES
+(7934, 'MILLER', 'CLERK',     7782, CAST('1982-01-13' AS DATE), 1300, NULL, 10);
 
-8.
-Utwórz procedurę, która oblicza i przydziela roczną premię dla pracowników na podstawie ich
-wynagrodzenia, stanowiska i wydajności działu.
-1. Procent premii powinien zostać określony w następujący sposób:
-○ Kierownicy (MANAGER) otrzymują 15% swojego wynagrodzenia jako premię.
-○ Analitycy (ANALYST) otrzymują 12% swojego wynagrodzenia.
-○ Sprzedawcy (SALESMAN) otrzymują 10% swojego wynagrodzenia plus 5% prowizji (jeśli
-dotyczy).
-○ Urzędnicy (CLERK) i inne stanowiska otrzymują 8% swojego wynagrodzenia.
-2. Działy o wysokich wynikach (średnie wynagrodzenie > 3000) powinny otrzymać 5% dodatkowej
-premii.
-3. Bonus powinien zostać zapisany w nowej tabeli o nazwie BONUS_HISTORY.
-4. Procedura powinna obejmować obsługę błędów w przypadku, gdy pracownik nie istnieje lub nie ma
-ważnego wynagrodzenia.
-CREATE TABLE BONUS_HISTORY (
-ID NUMBER GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-EMPNO NUMBER(4) NOT NULL,
-ENAME VARCHAR2(10),
-JOB VARCHAR2(9),
-DEPTNO NUMBER(2),
-SAL NUMBER(7,2),
-COMM NUMBER(7,2),
-BONUS_AMOUNT NUMBER(7,2),
-BONUS_DATE DATE DEFAULT SYSDATE );
+-- Insert data into PROJ table
+INSERT INTO PROJ (projno, pname, startdate, enddate) VALUES 
+(1, 'APOLLO XY', CAST('1999-01-01' AS DATE), CAST('2010-06-30' AS DATE));
+INSERT INTO PROJ VALUES 
+(2, 'ZEUS 13', CAST('2005-02-15' AS DATE), CAST('2025-08-15' AS DATE));
+INSERT INTO PROJ VALUES 
+(3, 'HERA_100', CAST('2024-03-01' AS DATE), NULL); 
+INSERT INTO PROJ VALUES 
+(4, 'HADES', CAST('2020-03-01' AS DATE), NULL); 
+
+-- Insert data into EMP_PROJ table
+INSERT INTO EMP_PROJ (empno, projno) VALUES 
+(7369, 1), (7499, 2), (7521, 2), (7566, 1), (7654, 3), (7698, 3),
+(7782, 1), (7788, 2), (7844, 1), (7876, 2), (7900, 3), (7902, 1), (7902, 3), (7934, 2), (7934, 1);
+
+-- Insert data into DEPT table
+INSERT INTO DEPT (deptno, dname, loc) VALUES 
+(10, 'ACCOUNTING', 'NEW YORK'),
+(20, 'RESEARCH',   'DALLAS'),
+(30, 'SALES',      'CHICAGO'),
+(40, 'OPERATIONS', 'BOSTON');
+
+-- Insert data into SALGRADE table
+INSERT INTO SALGRADE (grade, losal, hisal) VALUES 
+(1,  700, 1200),
+(2, 1201, 1400),
+(3, 1401, 2000),
+(4, 2001, 3000),
+(5, 3001, 9999);
