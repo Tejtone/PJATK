@@ -1,3 +1,15 @@
+-- twórz procedurę umożliwiającą wstawianie nowych pracowników do tabeli EMP. W parametrach 
+-- podaj: 
+-- ● nazwa działu 
+-- ● nazwisko pracownika 
+-- Przed wprowadzeniem nowego rekordu procedura powinna sprawdzić, czy istnieje dokładnie jeden 
+-- dział o podanej nazwie (jeśli nie, należy zgłosić błąd). 
+-- Znajdź wartości dla pozostałych kolumn: 
+-- ● Job - znajdź nazwę stanowiska z największą liczbą pracowników. 
+-- ● Sal - oblicz wynagrodzenie równe płacy minimalnej w danym dziale 
+-- ● Empno - bieżące maksymalne empno + 1 
+-- ● Deptno - identyfikator działu o nazwie podanej w parametrze 
+
 CREATE PROCEDURE Task6
     @dname VARCHAR(30),
     @ename VARCHAR(40)
