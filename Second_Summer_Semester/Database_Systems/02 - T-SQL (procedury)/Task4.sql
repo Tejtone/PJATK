@@ -1,3 +1,8 @@
+-- Użyj kursora, aby przejrzeć wszystkich pracowników i zmodyfikować ich wynagrodzenia: 
+-- ● Pracownicy, którzy zarabiają mniej niż 1000, otrzymują 10% podwyżkę wynagrodzenia. 
+-- ● Pracownicy, którzy zarabiają więcej niż 1500, mają obniżone wynagrodzenie o 10%. 
+-- ● Wyświetlanie informacji o każdej zmianie wprowadzonej w danych wyjściowych.
+
 DECLARE all_ename CURSOR FOR
 SELECT empno, ename, sal FROM EMP;
 
