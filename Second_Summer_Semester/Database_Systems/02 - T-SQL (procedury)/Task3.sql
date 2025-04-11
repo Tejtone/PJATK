@@ -3,7 +3,6 @@
 -- wyjściowym. Procedura powinna sprawdzić, czy dział o podanej nazwie lub lokalizacji już istnieje. Jeśli 
 -- tak, nie wstawi nowego rekordu i zgłosi błąd. 
 
-
 CREATE PROCEDURE task3
     @dname VARCHAR(50),
     @loc VARCHAR(20),
