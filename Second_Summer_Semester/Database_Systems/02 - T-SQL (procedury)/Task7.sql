@@ -1,3 +1,7 @@
+-- W procedurze znajdź średnią pensję w dziale określonym przez parametr. Przydziel prowizję (comm) 
+-- tym pracownikom (w ramach podanego działu), którzy zarabiają poniżej średniej. Prowizja powinna 
+-- być równa 5% ich miesięcznego wynagrodzenia. 
+
 CREATE PROCEDURE Task7
     @deptName VARCHAR(30)
 AS
