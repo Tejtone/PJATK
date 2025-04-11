@@ -1,3 +1,6 @@
+-- Przekształć kod z poprzedniego zadania w procedurę, aby wartości zarobków (1000 i 1500) były 
+-- dostarczane jako parametry wejściowe procedury.
+
 CREATE PROCEDURE task5
     @minSalary INT,
     @maxSalary INT
