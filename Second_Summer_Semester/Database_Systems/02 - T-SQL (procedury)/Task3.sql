@@ -1,3 +1,9 @@
+-- Utwórz procedurę do wstawiania nowych działów. Procedura będzie przyjmowała jako parametry 
+-- nazwy i lokalizacji. Numer działu zostanie wygenerowany automatycznie i zwrócony w parametrze 
+-- wyjściowym. Procedura powinna sprawdzić, czy dział o podanej nazwie lub lokalizacji już istnieje. Jeśli 
+-- tak, nie wstawi nowego rekordu i zgłosi błąd. 
+
+
 CREATE PROCEDURE task3
     @dname VARCHAR(50),
     @loc VARCHAR(20),
