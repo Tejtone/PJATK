@@ -1,0 +1,102 @@
+```sql
+-- Table: Dept
+CREATE TABLE DEPT (
+    deptno int  NOT NULL,
+    dname varchar(20)  NOT NULL,
+    loc varchar(20)  NOT NULL
+);
+
+-- Table: Emp
+CREATE TABLE EMP (
+    empno int  NOT NULL,
+    ename varchar(20)  NOT NULL,
+    job varchar(20)  NOT NULL,
+    mgr int  NULL,
+    hiredate date  NOT NULL,
+    sal int  NOT NULL,
+    comm int  NULL,
+    deptno int  NULL
+);
+
+-- Table: Emp_Proj
+CREATE TABLE EMP_PROJ (
+    empno int  NOT NULL,
+    projno int  NOT NULL
+);
+
+-- Table: Proj
+CREATE TABLE PROJ (
+    projno int  NOT NULL,
+    pname varchar(20)  NOT NULL,
+    startdate date  NOT NULL,
+    enddate date  NULL
+);
+
+-- Table: Salgrade
+CREATE TABLE SALGRADE (
+    grade int  NOT NULL,
+    losal int  NOT NULL,
+    hisal int  NOT NULL
+);
+
+
+-- Insert data into EMP table
+INSERT INTO EMP (empno, ename, job, mgr, hiredate, sal, comm, deptno) VALUES
+(7369, 'SMITH',  'CLERK',     7902, CAST('1980-12-17' AS DATE),  800, NULL, 20);
+INSERT INTO EMP VALUES
+(7499, 'ALLEN',  'SALESMAN',  7698, CAST('1981-02-20' AS DATE), 1600,  300, 30);
+INSERT INTO EMP VALUES
+(7521, 'WARD',   'SALESMAN',  7698, CAST('1981-02-22' AS DATE), 1250,  500, 30);
+INSERT INTO EMP VALUES
+(7566, 'JONES',  'MANAGER',   7839, CAST('1981-04-02' AS DATE),  2975, NULL, 20);
+INSERT INTO EMP VALUES
+(7654, 'MARTIN', 'SALESMAN',  7698, CAST('1981-09-28' AS DATE), 1250, 1400, 30);
+INSERT INTO EMP VALUES
+(7698, 'BLAKE',  'MANAGER',   7839, CAST('1981-05-01' AS DATE),  2850, NULL, 30);
+INSERT INTO EMP VALUES
+(7782, 'CLARK',  'MANAGER',   7839, CAST('1981-06-09' AS DATE),  2450, NULL, 10);
+INSERT INTO EMP VALUES
+(7788, 'SCOTT',  'ANALYST',   7566, CAST('1982-12-09' AS DATE), 3000, NULL, 20);
+INSERT INTO EMP VALUES
+(7839, 'KING',   'PRESIDENT', NULL, CAST('1981-11-17' AS DATE), 5000, NULL, 10);
+INSERT INTO EMP VALUES
+(7844, 'TURNER', 'SALESMAN',  7698, CAST('1981-09-08' AS DATE),  1500,    0, 30);
+INSERT INTO EMP VALUES
+(7876, 'ADAMS',  'CLERK',     7788, CAST('1983-01-12' AS DATE), 1100, NULL, 20);
+INSERT INTO EMP VALUES
+(7900, 'JAMES',  'CLERK',     7698, CAST('1981-12-03' AS DATE),   950, NULL, 30);
+INSERT INTO EMP VALUES
+(7902, 'FORD',   'ANALYST',   7566, CAST('1981-12-03' AS DATE),  3000, NULL, 20);
+INSERT INTO EMP VALUES
+(7934, 'MILLER', 'CLERK',     7782, CAST('1982-01-13' AS DATE), 1300, NULL, 10);
+
+-- Insert data into PROJ table
+INSERT INTO PROJ (projno, pname, startdate, enddate) VALUES 
+(1, 'APOLLO XY', CAST('1999-01-01' AS DATE), CAST('2010-06-30' AS DATE));
+INSERT INTO PROJ VALUES 
+(2, 'ZEUS 13', CAST('2005-02-15' AS DATE), CAST('2025-08-15' AS DATE));
+INSERT INTO PROJ VALUES 
+(3, 'HERA_100', CAST('2024-03-01' AS DATE), NULL); 
+INSERT INTO PROJ VALUES 
+(4, 'HADES', CAST('2020-03-01' AS DATE), NULL); 
+
+-- Insert data into EMP_PROJ table
+INSERT INTO EMP_PROJ (empno, projno) VALUES 
+(7369, 1), (7499, 2), (7521, 2), (7566, 1), (7654, 3), (7698, 3),
+(7782, 1), (7788, 2), (7844, 1), (7876, 2), (7900, 3), (7902, 1), (7902, 3), (7934, 2), (7934, 1);
+
+-- Insert data into DEPT table
+INSERT INTO DEPT (deptno, dname, loc) VALUES 
+(10, 'ACCOUNTING', 'NEW YORK'),
+(20, 'RESEARCH',   'DALLAS'),
+(30, 'SALES',      'CHICAGO'),
+(40, 'OPERATIONS', 'BOSTON');
+
+-- Insert data into SALGRADE table
+INSERT INTO SALGRADE (grade, losal, hisal) VALUES 
+(1,  700, 1200),
+(2, 1201, 1400),
+(3, 1401, 2000),
+(4, 2001, 3000),
+(5, 3001, 9999);
+```
