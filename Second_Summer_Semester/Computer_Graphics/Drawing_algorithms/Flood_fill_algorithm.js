@@ -44,7 +44,7 @@ function flood_fill(x, y) {
   
     stos.push([x, y]);
 
-    while (stos.length > 0 && cnt > 0) {
+    while (stos.length > 0) {
 
         [px, py] = stos.pop();
       
